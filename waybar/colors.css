@@ -1,0 +1,40 @@
+@define-color bg_color #303030;
+@define-color fg_color #FFFFFF;
+
+@define-color clock_bg_color #2E3440;
+@define-color clock_fg_color #D8DEE9;
+
+@define-color file_manager_bg_color #3B4252;
+@define-color file_manager_fg_color #E5E9F0;
+
+@define-color network_bg_color #434C5E;
+@define-color network_fg_color #E5E9F0;
+
+@define-color power_bg_color #4C566A;
+@define-color power_fg_color #E5E9F0;
+
+@define-color sound_bg_color #4C566A;
+@define-color sound_fg_color #E5E9F0;
+
+@define-color notifications_bg_color #5E81AC;
+@define-color notifications_fg_color #E5E9F0;
+
+@define-color system_bg_color #5E81AC;
+@define-color system_fg_color #E5E9F0;
+
+@define-color workspace_bg_color #65737E;
+@define-color workspace_fg_color #E5E9F0;
+
+@define-color user_bg_color #6C7680;
+@define-color user_fg_color #E5E9F0;
+
+@define-color datetime_bg_color #81A1C1;
+@define-color datetime_fg_color #E5E9F0;
+
+@define-color notifications_bg_color #88C0D0;
+@define-color notifications_fg_color #2E3440;
+
+@define-color idle_inhibitor_bg_color #8FBCBB;
+@define-color idle_inhibitor_fg_color #2E3440;
+
+@define-color lock_color #00b093; 
