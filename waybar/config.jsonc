@@ -5,14 +5,21 @@
     // "width": 1280, // Waybar width
     "spacing": 2, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces", "custom/media", "privacy"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["keyboard-state", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "hyprland/language", "battery", "battery#bat2", "clock", "tray"],
+    "modules-left": ["hyprland/workspaces",  "hyprland/window"],
+    "modules-center": ["custom/media",],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "backlight", "hyprland/language", "battery",  "clock", "tray"],
     // Modules configuration
     "hyprland/workspaces": {
          "disable-scroll": true,
          //"all-outputs": true,
          "warp-on-scroll": false,
+         "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+         }
          //"format": "{name}: {icon}",
          //"format-icons": {
              //"1": "",
@@ -62,7 +69,7 @@
 
     "clock": {
         "format": "{:%H:%M}",
-        "format-alt": "{:%A, %B %d, %Y (%R)}",
+        "format-alt": "{:%A, %d %B, %Y (%R)}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
                     "mode"          : "year",
@@ -73,7 +80,7 @@
                     "format": {
                               "months":     "<span color='#ffead3'><b>{}</b></span>",
                               "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              //"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
                               "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
                               "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
                               }
@@ -131,11 +138,17 @@
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        //"format-wifi": "{essid} ({signalStrength}%) ",
+        //"format-ethernet": "{ipaddr}/{cidr} ",
+        //"tooltip-format": "{ifname} via {gwaddr} ",
+        //"format-linked": "{ifname} (No IP) ",
+        //"format-disconnected": "Disconnected ⚠",
+        //"format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "({signalStrength}%) ",
+        "format-ethernet": "",
         "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-linked": "(No IP) ",
+        "format-disconnected": "⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
 

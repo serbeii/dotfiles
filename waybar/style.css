@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Fira Code;
+    font-family: FontAwesome, Fira Code;
     font-size: 13px;
     min-height: 0px;
     border-radius: 6px;
@@ -13,9 +13,8 @@
 @import url("colors.css");
 
 window#waybar {
-    background-color: @bg_color;
+    background-color: alpha(@bg_color, 0.40);
     color: @fg_color;
-    background: transparent;
     transition-property: background-color;
     transition-duration: 0.5s;
 }
@@ -26,7 +25,6 @@ window#waybar.hidden {
 
 
 window#waybar.empty {
-    background-color: transparent;
 }
 /*
 window#waybar.solo {
@@ -57,29 +55,26 @@ button {
     box-shadow: inset 0 -2px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
+    border-radius: 0;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
-    background: inherit;
-    box-shadow: inset 0 -2px 2px 0 #ffffff, 0 2px 2px 0 @lock_color inset, 0 0 4px rgba(0, 0, 0, 0.2);
+    background-color: pink;
 }
 
 #workspaces button {
     padding: 0 5px;
-}
-
-#workspaces button:hover {
+    color: rgba(127, 127, 127, 1);
 }
 
 #workspaces button GtkLabel {
     -GtkWidget-line-spacing: 0;
 }
 
-#workspaces button.focused {
-    background-color: rgba(0,0,0,0.3);
-    border-top: 2px solid @lock_color;
-    box-shadow: inset 0 -2px 2px 0 #ffffff, 0 2px 2px 0 @lock_color inset, 0 0 4px rgba(0, 0, 0, 0.2);
+#workspaces button.active {
+    color: white;
+    box-shadow: inset 0 -2 lightblue;
 }
 
 #workspaces button.urgent {
@@ -120,19 +115,13 @@ button:hover {
 }
 
 #clock {
-    background-color: @clock_bg_color;
-    color: @clock_fg_color;
     padding: 0 10px;
 }
 
-#battery {
-    background-color: @power_bg_color;
-    color: @power_fg_color;
-}
+
 
 #battery.charging, #battery.plugged {
-    color: @fg_color;
-    background-color: #26A65B;
+    color: #26A65B;
 }
 
 @keyframes blink {
@@ -143,8 +132,7 @@ button:hover {
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: @fg_color;
+    color: #f53c3c;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -156,38 +144,8 @@ label:focus {
     background-color: #000000;
 }
 
-#cpu {
-    background-color: @power_bg_color;
-    color: @power_fg_color;
-}
-
-#memory {
-    background-color: @file_manager_bg_color;
-    color: @fole_manager_fg_color;
-}
-
-#backlight {
-    background-color: @notifications_bg_color;
-    color: @notifications_fg_color;
-}
-
-#network {
-    background-color: @network_bg_color;
-    color: @network_fg_color;
-}
-
 #network.disconnected {
-    background-color: #f53c3c;
-}
-
-#pulseaudio {
-    background-color: @sound_bg_color;
-    color: @sound_fg_color;
-}
-
-#pulseaudio.muted {
-    background-color: @file_manager_bg_color;
-    color: @file_manager_fg_color;    
+    color: #f53c3c;
 }
 
 #temperature {
@@ -199,33 +157,20 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-#tray {
-    background-color: @network_bg_color;
-    color: @network_fg_color;
-}
-
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
 }
 
-#idle_inhibitor {
-    background-color: @idle_inhibitor_bg_color;
-    color: @idle_inhibitor_fg_color; 
-}
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: @idle_inhibitor_fg_color;
+    background-color: #97e1ad;
 }
 
 #language {
-    background: @lock_color;
-    color: #740864;
     padding: 0 5px;
     min-width: 16px;
 }
@@ -264,9 +209,4 @@ label:focus {
 
 #privacy-item.audio-out {
     background-color: #0069d4;
-}
-
-#custom-media {
-    background-color: @sound_bg_color;
-    color: @fg_color;
 }
