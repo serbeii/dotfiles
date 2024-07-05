@@ -13,13 +13,13 @@
          "disable-scroll": true,
          //"all-outputs": true,
          "warp-on-scroll": false,
-         "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-         }
+         //"persistent_workspaces": {
+            //"1": [],
+            //"2": [],
+            //"3": [],
+            //"4": [],
+            //"5": [],
+         //}
          //"format": "{name}: {icon}",
          //"format-icons": {
              //"1": "",
