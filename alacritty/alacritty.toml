@@ -1,9 +1,9 @@
 [font.bold]
-family = "Fira Code"
+family = "FiraMono Nerd Font"
 style = "Bold"
 
 [font.normal]
-family = "Fira Code"
+family = "FiraMono Nerd Font"
 style = "Regular"
 
 [window]
